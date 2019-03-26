@@ -25,7 +25,11 @@ class App extends Component {
 
   handleClick = (playerObj) => {
     console.log(playerObj)
-    this.setState({ teams: [...this.state.teams, playerObj] })
+    if([...this.state.teams].includes(playerObj)) {
+      return null
+    } else {
+      this.setState({ teams: [...this.state.teams, playerObj] })
+    }
   }
 
   removeClick = (playerObj) => {

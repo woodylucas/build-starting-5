@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayersContainer from './Containers/PlayersContainer'
 import TeamsContainer from './Containers/TeamsContainer'
+import { Grid, Segment } from 'semantic-ui-react'
 
 
 
@@ -57,10 +58,14 @@ class App extends Component {
   render() {
     const { players, teams, filteredPlayers } = this.state
     return (
-      <div className="App">
-        <PlayersContainer changeHandler={this.changeHandler} value={this.props.searchTerm} submitHandler={this.submitHandler} handleClick={this.handleClick} players={ filteredPlayers } />
-        <TeamsContainer teams={ teams } handleClick={ this.removeClick } />
-      </div>
+      <Segment textAlign='center'>
+        <Grid>
+          <Grid.Row columns={2}>
+            <PlayersContainer changeHandler={this.changeHandler} value={this.props.searchTerm} submitHandler={this.submitHandler} handleClick={this.handleClick} players={ filteredPlayers } />
+            <TeamsContainer teams={ teams } handleClick={ this.removeClick } />
+          </Grid.Row>
+        </Grid>
+      </Segment>
     );
   }
 }

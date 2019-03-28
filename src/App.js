@@ -65,7 +65,7 @@ class App extends Component {
       <Segment textAlign='center'>
         <Grid>
           <Grid.Row columns={2}>
-            <PlayersContainer changeHandler={this.changeHandler} value={this.props.searchTerm} submitHandler={this.submitHandler} handleClick={this.handleClick} players={ filteredPlayers } />
+            <PlayersContainer changeHandler={this.changeHandler} value={this.state.searchTerm} submitHandler={this.submitHandler} handleClick={this.handleClick} players={ filteredPlayers } />
             <TeamsContainer teams={ teams } handleClick={ this.removeClick } />
           </Grid.Row>
         </Grid>
